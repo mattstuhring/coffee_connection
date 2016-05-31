@@ -1,0 +1,43 @@
+html, body {
+  height: 96%;
+  margin: 0;
+  padding: 0;
+}
+#map-canvas {
+  height: 100%;
+}
+.sideNavSearch {
+  height: 5%;
+}
+.searchBar {
+  margin-bottom: 0 !important;
+}
+.sideBarBtn {
+  margin-left: 3rem;
+}
+.searchBtn {
+  margin-top: 10px;
+}
+.coffeeHeader {
+  background-image: url('coffee.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.brand-logo {
+  left: 18%;
+  font: 400 100px/1.5 'Pacifico', Helvetica, sans-serif;
+  color: #2b2b2b;
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+  margin-top: 10px;
+}
+.inputCity {
+  font: 1.8rem 'Pacifico', Helvetica, sans-serif !important;
+  color: #2b2b2b;
+}
+nav .input-field input {
+  padding-left: 0 !important;
+}
+.infowindow p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
