@@ -1,5 +1,5 @@
 html, body {
-  height: 96%;
+  height: 90%;
   margin: 0;
   padding: 0;
 }
@@ -10,10 +10,7 @@ html, body {
   height: 5%;
 }
 .searchBar {
-  margin-bottom: 0 !important;
-}
-.sideBarBtn {
-  margin-left: 3rem;
+  margin-bottom: 0;
 }
 .searchBtn {
   margin-top: 10px;
@@ -24,20 +21,34 @@ html, body {
   background-size: cover;
 }
 .brand-logo {
-  left: 18%;
-  font: 400 100px/1.5 'Pacifico', Helvetica, sans-serif;
+  left: 15%;
+  font: 3rem 'Pacifico', Helvetica, sans-serif !important;
   color: #2b2b2b;
   text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
-  margin-top: 10px;
-}
-.inputCity {
-  font: 1.8rem 'Pacifico', Helvetica, sans-serif !important;
-  color: #2b2b2b;
 }
 nav .input-field input {
-  padding-left: 0 !important;
+  padding-left: 0;
 }
 .infowindow p {
   margin-top: 0;
   margin-bottom: 0;
+}
+.infowindow h5 {
+  font: 2rem 'Pacifico', Helvetica, sans-serif;
+}
+ul {
+  background-image: url('coffeeSideNav.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media only screen and (max-width: 992px) {
+  .brand-logo {
+    left: 35% !important;
+    font-size: 2rem !important;
+  }
+  html, body {
+    height: 95% !important;
+    margin: 0;
+    padding: 0;
+  }
 }
