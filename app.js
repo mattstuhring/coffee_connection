@@ -31,8 +31,9 @@ $('.formDesktopNav').submit(function(event) {
   event.preventDefault();
 
   coffeeShopContent = [];
+  allLatLng = [];
+  allMarkers = [];
   var $cityNav = $('#chooseCity2').val();
-
   if ($cityNav.length === 0) {
     Materialize.toast('Please fill in search', 4000);
     return;
@@ -47,6 +48,8 @@ $('.formSideNav').submit(function(event) {
   event.preventDefault();
 
   coffeeShopContent = [];
+  allLatLng = [];
+  allMarkers = [];
   var $citySideNav = $('#chooseCity').val();
 
   if ($citySideNav.length === 0) {
@@ -65,7 +68,8 @@ var getCoffeeId = function(city) {
 
   $xhr.done(function(categoryId) {
     if ($xhr.status !== 200) {
-        return;
+      Materialize.toast('Search error, please try again', 4000);
+      return;
     }
     var venueIds = categoryId.response.venues;
 
@@ -76,6 +80,10 @@ var getCoffeeId = function(city) {
       coffeeShopId.push(venue);
       getCoffeeContent(venue);
     }
+  });
+
+  $xhr.fail(function() {
+    Materialize.toast('Search error, please try again', 4000);
   });
 };
 
@@ -91,7 +99,6 @@ var getCoffeeContent = function(venue) {
     }
     //grabs all data of each venue
     var biz = contents.response.venue;
-
     if (hasWifi(biz)) {
       var latitude = biz.location.lat;
       var longitude = biz.location.lng;
@@ -101,7 +108,6 @@ var getCoffeeContent = function(venue) {
       var address3 = biz.location.formattedAddress[2];
       var hours = biz.hours.status;
       var fourSquareVenueUrl = biz.canonicalUrl;
-      console.log(fourSquareVenueUrl);
 
       var contentString = `<div class="infowindow"><h5>${venueName}</h5><p> ${address1}</p><p>${address2}</p><p>${address3}</p><p>${hours}</p><a href="${fourSquareVenueUrl}">${venueName}</a></div>`;
 
@@ -110,9 +116,9 @@ var getCoffeeContent = function(venue) {
       var infowindow = new google.maps.InfoWindow({
         content: contentString,
       });
-
+      // image for custom google map marker - blue coffee cup
       var image = {
-        url: 'coffee-icon.png',
+        url: 'icon.png',
         size: new google.maps.Size(80, 80)
       };
 
@@ -131,16 +137,16 @@ var getCoffeeContent = function(venue) {
 			allLatLng.push(myLatLng);
 
       //  Make an array of the LatLng's of the markers you want to show
-    	//  Create a new viewpoint bound
-    	var bounds = new google.maps.LatLngBounds();
+      //  Create a new viewpoint bound
+      var bounds = new google.maps.LatLngBounds();
 
-    	//  Go through each...
-    	for (var i = 0, LtLgLen = allLatLng.length; i < LtLgLen; i++) {
-    	  //  And increase the bounds to take this point
-    	  bounds.extend(allLatLng[i]);
-    	}
-    	//  Fit these bounds to the map
-    	map.fitBounds(bounds);
+      //  Go through each...
+      for (var i = 0, LtLgLen = allLatLng.length; i < LtLgLen; i++) {
+        //  And increase the bounds to take this point
+        bounds.extend(allLatLng[i]);
+      }
+      //  Fit these bounds to the map
+      map.fitBounds(bounds);
     }
   });
 };
@@ -180,6 +186,8 @@ $('#myLocNav').on('click', function(event) {
 });
 //End Geo location for desktop nav bar
 
+
+
 //Start geolocation for side nav bar
 $('#myLocSideNav').on('click', function(event) {
 
@@ -206,6 +214,8 @@ $('#myLocSideNav').on('click', function(event) {
 });
 //End Geo location for side nav
 
+
+
 // Get venues with wifi by user lat and lng
 var getCoffeeIdByUserLatLng = function(userLat, userLng) {
   var $xhr = $.getJSON(`https://api.foursquare.com/v2/venues/search?client_id=UKXBEBLHQL3OZCTIRTNXWLGZZH3UBCV1PRHMYMJ2UOOUWVS5&client_secret=XRAB0PTCW1RDQMAU5W1S3YMSXTZUFUUV01CYHTWQHR2T0LCM&v=20130815&ll=${userLat},${userLng}&categoryId=4bf58dd8d48988d1e0931735&radius=3200`);
@@ -223,6 +233,9 @@ var getCoffeeIdByUserLatLng = function(userLat, userLng) {
       coffeeShopId.push(venue);
       getCoffeeContent(venue);
     }
+  });
+  $xhr.fail(function() {
+    Materialize.toast('Search error, please try again', 4000);
   });
 };
 

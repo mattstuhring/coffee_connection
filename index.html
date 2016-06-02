@@ -15,7 +15,7 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper amber lighten-5 coffeeHeader">
-          <a href="index.html" class="brand-logo white-text">Coffee Connection</a>
+          <img src="logo.png" alt="Coffee Connection"/>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons white-text">menu</i></a>
           <ul class="side-nav" id="mobile-demo">
             <li class="sideNavSearch">
@@ -28,17 +28,18 @@
                 </div>
                 <div class="row">
                   <div class="col s12">
-                    <a><button class="btn-large waves-effect waves-light brown" type="submit" name="action"><i class="material-icons right">search</i>Search
-                    </button></a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12">
-                    <a class="center-align"><button class="btn-large waves-effect waves-light green lighten-2" id="myLocSideNav"><i class="material-icons right">gps_fixed</i>GPS
-                    </button></a>
+                    <a>
+                      <button class="btn-large waves-effect waves-light brown" type="submit" name="action"><i class="material-icons right">search</i>Search</button>
+                    </a>
                   </div>
                 </div>
               </form>
+              <div class="row">
+                <div class="col s12">
+                  <a class="center-align"><button class="btn-large waves-effect waves-light green lighten-2" id="myLocSideNav"><i class="material-icons right">gps_fixed</i>Locate
+                  </button></a>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -55,19 +56,18 @@
           </div>
           <div class="col s2 right-align">
             <button class="btn-large waves-effect waves-light brown searchBtn" type="submit" name="action">
-            <i class="material-icons right">search</i>Search
-          </button>
-          </div>
-          <div class="col s4 left-align">
-            <a class="waves-effect waves-light btn-large searchBtn green lighten-2" id="myLocNav"><i class="material-icons right">gps_fixed</i>My Location</a>
+              <i class="material-icons right">search</i>
+              Search
+            </button>
           </div>
         </form>
+        <div class="col s4 left-align">
+          <a class="waves-effect waves-light btn-large searchBtn green lighten-2" id="myLocNav"><i class="material-icons right">gps_fixed</i>My Location</a>
+        </div>
       </div>
     </div>
 
     <div id="map-canvas"></div>
-
-
 
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
