@@ -5,9 +5,9 @@
     <title>CoffeeConnection</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-    <link rel="stylesheet" href="app.css">
-
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
@@ -22,19 +22,19 @@
               <form class="formSideNav">
                 <div class="row amber lighten-5">
                   <div class="input-field col s12">
-                    <input placeholder="Enter... City, State" id="chooseCity" type="text" class="validate brown-text lighten-1 inputCity">
+                    <input placeholder="Enter your city and state" id="chooseCity" type="text" class="validate brown-text lighten-1 inputCity">
                     <label for="chooseCity"></label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col s12">
-                    <a><button class="btn-large waves-effect waves-light brown lighten-1" type="submit" name="action"><i class="material-icons right">search</i>Search
+                    <a><button class="btn-large waves-effect waves-light brown" type="submit" name="action"><i class="material-icons right">search</i>Search
                     </button></a>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col s12">
-                    <a><button class="btn-large waves-effect waves-light brown lighten-1" id="myLocSideNav">My Location
+                    <a class="center-align"><button class="btn-large waves-effect waves-light green lighten-2" id="myLocSideNav"><i class="material-icons right">gps_fixed</i>GPS
                     </button></a>
                   </div>
                 </div>
@@ -50,16 +50,16 @@
         <form class="formDesktopNav">
           <div class="col offset-s2 s4">
             <div class="input-field">
-              <input type="text" placeholder="Enter... City, State" id="chooseCity2" name="search" class="validate">
+              <input type="text" placeholder="Enter your city and state" id="chooseCity2" name="search" class="validate brown-text lighten-1">
             </div>
           </div>
-          <div class="col s2">
-            <button class="btn-large waves-effect waves-light brown lighten-1 searchBtn" type="submit" name="action">
+          <div class="col s2 right-align">
+            <button class="btn-large waves-effect waves-light brown searchBtn" type="submit" name="action">
             <i class="material-icons right">search</i>Search
-            </button>
+          </button>
           </div>
           <div class="col s4 left-align">
-            <a class="waves-effect waves-light btn-large searchBtn brown lighten-1" id="myLocNav"><i class="material-icons right">cloud</i>My Location</a>
+            <a class="waves-effect waves-light btn-large searchBtn green lighten-2" id="myLocNav"><i class="material-icons right">gps_fixed</i>My Location</a>
           </div>
         </form>
       </div>

@@ -16,9 +16,10 @@ html, body {
   margin-top: 10px;
 }
 .coffeeHeader {
-  background-image: url('coffee.jpg');
+  background-image: url('coffee.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: rgba(255, 0, 0, 0.1);
 }
 .brand-logo {
   left: 15%;
@@ -32,9 +33,11 @@ nav .input-field input {
 .infowindow p {
   margin-top: 0;
   margin-bottom: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 .infowindow h5 {
-  font: 2rem 'Pacifico', Helvetica, sans-serif;
+  font: 2rem;
+  font-family: 'Open Sans', sans-serif;
 }
 ul {
   background-image: url('coffeeSideNav.png');
@@ -45,10 +48,27 @@ ul {
   .brand-logo {
     left: 35% !important;
     font-size: 2rem !important;
+    top: 23% !important;
   }
   html, body {
     height: 95% !important;
     margin: 0;
     padding: 0;
+  }
+}
+input[type=text] {
+  color: brown;
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 1.3rem;
+}
+.row .col.s2 {
+  width: 13.666667%;
+}
+.btn-large {
+  font-family: 'Open Sans', sans-serif !important;
+}
+@media only screen and (min-width: 601px) {
+  nav .nav-wrapper i {
+    line-height: 54px !important;
   }
 }

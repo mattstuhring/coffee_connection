@@ -9,11 +9,14 @@ var allMarkers = [];
 var map;
 var userCords;
 var pos;
+var styles = [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"visibility":"on"},{"hue":"#0066ff"},{"saturation":74},{"lightness":100}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"on"},{"weight":0.6},{"saturation":-85},{"lightness":61}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"on"},{"color":"#5f94ff"},{"lightness":26},{"gamma":5.86}]}];
+
 
 function initMap() {
   var mapOptions = {
-    zoom: 4,
+    zoom: 5,
     center: new google.maps.LatLng(37.09024, -95.712891),
+    styles: styles,
     zoomControl: true,
     zoomControlOptions: {
       style: google.maps.ZoomControlStyle.LARGE,
@@ -22,8 +25,6 @@ function initMap() {
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 }
-
-
 
 //grab form input from desktop nav bar
 $('.formDesktopNav').submit(function(event) {
@@ -99,9 +100,10 @@ var getCoffeeContent = function(venue) {
       var address2 = biz.location.formattedAddress[1];
       var address3 = biz.location.formattedAddress[2];
       var hours = biz.hours.status;
-      var fourSquareVenueUrl = biz.shortUrl;
+      var fourSquareVenueUrl = biz.canonicalUrl;
+      console.log(fourSquareVenueUrl);
 
-      var contentString = '<div class="infowindow"><h5>' + venueName + '</h5><p>' + address1 + '</p><p>' + address2 + '</p><p>' + address3 + '</p><p>' + hours + '</p><a href="fourSquareVenueUrl">' + venueName + '</a></div>';
+      var contentString = `<div class="infowindow"><h5>${venueName}</h5><p> ${address1}</p><p>${address2}</p><p>${address3}</p><p>${hours}</p><a href="${fourSquareVenueUrl}">${venueName}</a></div>`;
 
       var myLatLng = new google.maps.LatLng(latitude, longitude);
 
@@ -109,23 +111,21 @@ var getCoffeeContent = function(venue) {
         content: contentString,
       });
 
+      var image = {
+        url: 'coffee-icon.png',
+        size: new google.maps.Size(80, 80)
+      };
+
       var marker = new google.maps.Marker({
         position: myLatLng,
-        map: map
+        map: map,
+        icon: image
       });
 
       marker.addListener('click', function() {
         infowindow.setContent(contentString);
         infowindow.open(map, marker);
       });
-
-      // marker.addListener('mouseover', function() {
-      //   infowindow.open(map, marker);
-      // });
-      //
-      // marker.addListener('mouseout', function() {
-      //   infowindow.close(map, marker);
-      // });
 
       //put all lat long in array
 			allLatLng.push(myLatLng);
@@ -154,11 +154,6 @@ var hasWifi = function(biz) {
 };
 
 
-
-
-
-
-
 //Start geolocation for desktop nav bar
 $('#myLocNav').on('click', function(event) {
 
@@ -183,9 +178,9 @@ $('#myLocNav').on('click', function(event) {
 		alert('Geolocation is not supported in your browser');
 	}
 });
-//End Geo location
+//End Geo location for desktop nav bar
 
-//Start geolocation for desktop nav bar
+//Start geolocation for side nav bar
 $('#myLocSideNav').on('click', function(event) {
 
   if (navigator.geolocation) {
@@ -209,7 +204,7 @@ $('#myLocSideNav').on('click', function(event) {
 		alert('Geolocation is not supported in your browser');
 	}
 });
-//End Geo location
+//End Geo location for side nav
 
 // Get venues with wifi by user lat and lng
 var getCoffeeIdByUserLatLng = function(userLat, userLng) {
