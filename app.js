@@ -141,7 +141,7 @@ var getCoffeeContent = function(venue) {
         infowindow.open(map, marker);
       });
 
-      //put all lat long in array
+      //store all lat long in array
 			allLatLng.push(myLatLng);
 
       //  Make an array of the LatLng's of the markers you want to show
@@ -199,7 +199,7 @@ $('#myLocNav').on('click', function(event) {
 
 //Start geolocation for side nav bar
 $('#myLocSideNav').on('click', function(event) {
-  Materialize.toast('Calculating', 4000);
+  Materialize.toast('...Calculating', 4000);
 
   if (navigator.geolocation) {
 
@@ -208,7 +208,6 @@ $('#myLocSideNav').on('click', function(event) {
   	}
 
   	function success(pos){
-      Materialize.toast('...Calculating', 4000);
   		userCords = pos.coords;
       var userLat = userCords.latitude;
       var userLng = userCords.longitude;
