@@ -109,13 +109,15 @@ var getCoffeeContent = function(venue) {
       var hours = biz.hours.status;
       var fourSquareVenueUrl = biz.canonicalUrl;
 
-      var contentString = `<div class="infowindow"><h5>${venueName}</h5><p> ${address1}</p><p>${address2}</p><p>${address3}</p><p>${hours}</p><a href="${fourSquareVenueUrl}">${venueName}</a></div>`;
+      var contentString = `<div class="infowindow"><h3>${venueName}</h3><p> ${address1}</p><p>${address2}</p><p>${address3}</p><h6>${hours}</h6><a href="${fourSquareVenueUrl}">${venueName}</a></div>`;
 
       var myLatLng = new google.maps.LatLng(latitude, longitude);
 
+      // create infowindow to display venue content
       var infowindow = new google.maps.InfoWindow({
         content: contentString,
       });
+
       // image for custom google map marker - blue coffee cup
       var image = {
         url: 'icon.png',
@@ -162,6 +164,7 @@ var hasWifi = function(biz) {
 
 //Start geolocation for desktop nav bar
 $('#myLocNav').on('click', function(event) {
+  Materialize.toast('...Calculating', 4000);
 
   if (navigator.geolocation) {
 
@@ -181,7 +184,7 @@ $('#myLocNav').on('click', function(event) {
 	navigator.geolocation.getCurrentPosition(success, error);
 	//console.log(pos.latitude + " " + pos.longitude);
 	} else {
-		alert('Geolocation is not supported in your browser');
+    Materialize.toast('Geolocation is not supported in your browser', 4000);
 	}
 });
 //End Geo location for desktop nav bar
@@ -190,6 +193,7 @@ $('#myLocNav').on('click', function(event) {
 
 //Start geolocation for side nav bar
 $('#myLocSideNav').on('click', function(event) {
+  Materialize.toast('Calculating', 4000);
 
   if (navigator.geolocation) {
 
@@ -198,6 +202,7 @@ $('#myLocSideNav').on('click', function(event) {
   	}
 
   	function success(pos){
+      Materialize.toast('...Calculating', 4000);
   		userCords = pos.coords;
       var userLat = userCords.latitude;
       var userLng = userCords.longitude;
@@ -209,7 +214,7 @@ $('#myLocSideNav').on('click', function(event) {
 	navigator.geolocation.getCurrentPosition(success, error);
 	//console.log(pos.latitude + " " + pos.longitude);
 	} else {
-		alert('Geolocation is not supported in your browser');
+    Materialize.toast('Geolocation is not supported in your browser', 4000);
 	}
 });
 //End Geo location for side nav

@@ -31,11 +31,15 @@ nav .input-field input {
 .infowindow p {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 300 'Open Sans', sans-serif;
 }
-.infowindow h5 {
+.infowindow h6 {
+  font-family: 400 'Open Sans', sans-serif;
+}
+.infowindow h3 {
   font: 2rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 700 'Open Sans', sans-serif;
+  margin-bottom: 5px;
 }
 ul {
   background-image: url('coffeeSideNav.png');
