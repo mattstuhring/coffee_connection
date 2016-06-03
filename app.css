@@ -1,7 +1,8 @@
 html, body {
-  height: 90%;
+  height: 89%;
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 #map-canvas {
   height: 100%;
@@ -16,7 +17,7 @@ html, body {
   margin-top: 10px;
 }
 .coffeeHeader {
-  background-image: url('coffee.png');
+  background-image: url('coffee.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-color: rgba(255, 0, 0, 0.1);
@@ -42,20 +43,12 @@ nav .input-field input {
   margin-bottom: 5px;
 }
 ul {
-  background-image: url('coffeeSideNav.png');
+  background-image: url('coffeeSideNav.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
-input[type=text] {
-  color: brown;
-  font-family: 'Open Sans', sans-serif !important;
-  font-size: 1.3rem;
-}
 .row .col.s2 {
   width: 13.666667%;
-}
-.btn-large {
-  font-family: 'Open Sans', sans-serif !important;
 }
 @media only screen and (max-width: 992px) {
   img {
@@ -69,7 +62,16 @@ input[type=text] {
   img {
     width: 15rem;
     position: relative;
-    right: 6%;
-    margin-top: 1.1rem;
+    right: 9%;
+    margin-top: 0.5rem;
   }
+}
+nav .button-collapse i {
+  margin-left: 10px;
+}
+.row .col.s2 {
+  width: 18.666667%;
+}
+.row .col.s4 {
+  padding-left: 0;
 }

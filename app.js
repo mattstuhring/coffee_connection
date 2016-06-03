@@ -14,8 +14,8 @@ var styles = [{"featureType":"administrative","elementType":"all","stylers":[{"v
 
 function initMap() {
   var mapOptions = {
-    zoom: 5,
-    center: new google.maps.LatLng(37.09024, -95.712891),
+    zoom: 7,
+    center: new google.maps.LatLng(47.4235, -120.3103),
     styles: styles,
     zoomControl: true,
     zoomControlOptions: {
@@ -24,6 +24,12 @@ function initMap() {
     }
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  google.maps.event.addDomListener(window, "resize", function() {
+   var center = map.getCenter();
+   google.maps.event.trigger(map, "resize");
+   map.setCenter(center);
+});
 }
 
 //grab form input from desktop nav bar
@@ -221,7 +227,7 @@ $('#myLocSideNav').on('click', function(event) {
 
 
 
-// Get venues with wifi by user lat and lng
+// response to foursquare venues with wifi by user lat and lng
 var getCoffeeIdByUserLatLng = function(userLat, userLng) {
   var $xhr = $.getJSON(`https://api.foursquare.com/v2/venues/search?client_id=UKXBEBLHQL3OZCTIRTNXWLGZZH3UBCV1PRHMYMJ2UOOUWVS5&client_secret=XRAB0PTCW1RDQMAU5W1S3YMSXTZUFUUV01CYHTWQHR2T0LCM&v=20130815&ll=${userLat},${userLng}&categoryId=4bf58dd8d48988d1e0931735&radius=3200`);
 
@@ -243,11 +249,3 @@ var getCoffeeIdByUserLatLng = function(userLat, userLng) {
     Materialize.toast('Search error, please try again', 4000);
   });
 };
-
-
-
-
-
-
-
-//

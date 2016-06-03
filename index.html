@@ -13,30 +13,31 @@
   <body>
 
     <div class="navbar-fixed">
-      <nav>
+      <nav class="z-depth-2">
         <div class="nav-wrapper amber lighten-5 coffeeHeader">
-          <img src="logo.png" alt="Coffee Connection"/>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons white-text">menu</i></a>
+          <a href="index.html"><img src="logo.png" alt="Coffee Connection"/></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons white-text">menu</i>
+          </a>
           <ul class="side-nav" id="mobile-demo">
             <li class="sideNavSearch">
               <form class="formSideNav">
-                <div class="row amber lighten-5">
+                <div class="row amber lighten-5 z-depth-2">
                   <div class="input-field col s12">
-                    <input placeholder="Enter your city and state" id="chooseCity" type="text" class="validate brown-text lighten-1 inputCity">
+                    <input placeholder="Enter your city and state" id="chooseCity" type="text" class="validate blue-text accent-4 inputCity">
                     <label for="chooseCity"></label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col s12">
                     <a>
-                      <button class="btn-large waves-effect waves-light brown" type="submit" name="action"><i class="material-icons right">search</i>Search</button>
+                      <button class="btn-large waves-effect waves-light brown z-depth-2" type="submit" name="action"><i class="material-icons right">search</i>Search</button>
                     </a>
                   </div>
                 </div>
               </form>
               <div class="row">
                 <div class="col s12">
-                  <a class="center-align"><button class="btn-large waves-effect waves-light green lighten-2" id="myLocSideNav"><i class="material-icons right">gps_fixed</i>Locate
+                  <a class="center-align"><button class="btn-large waves-effect waves-light green lighten-2 z-depth-2" id="myLocSideNav"><i class="material-icons right">gps_fixed</i>Locate
                   </button></a>
                 </div>
               </div>
@@ -46,23 +47,23 @@
       </nav>
     </div>
 
-    <div class="row amber lighten-5 searchBar">
+    <div class="row amber lighten-5 searchBar z-depth-2">
       <div class="hide-on-med-and-down">
         <form class="formDesktopNav">
           <div class="col offset-s2 s4">
             <div class="input-field">
-              <input type="text" placeholder="Enter your city and state" id="chooseCity2" name="search" class="validate brown-text lighten-1">
+              <input type="text" placeholder="Enter your city and state" id="chooseCity2" name="search" class="validate blue-text accent-4">
             </div>
           </div>
           <div class="col s2 right-align">
-            <button class="btn-large waves-effect waves-light brown searchBtn" type="submit" name="action">
+            <button class="btn-large waves-effect waves-light brown searchBtn z-depth-2" type="submit" name="action">
               <i class="material-icons right">search</i>
               Search
             </button>
           </div>
         </form>
-        <div class="col s4 left-align">
-          <a class="waves-effect waves-light btn-large searchBtn green lighten-2" id="myLocNav"><i class="material-icons right">gps_fixed</i>My Location</a>
+        <div class="col s3 left-align">
+          <a class="waves-effect waves-light btn-large searchBtn green lighten-2 z-depth-2" id="myLocNav"><i class="material-icons right">gps_fixed</i>My Location</a>
         </div>
       </div>
     </div>
