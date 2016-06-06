@@ -70,7 +70,7 @@ $('.formSideNav').submit(function(event) {
 // Response to get all venues near a city with a coffee shop Id
 var getCoffeeId = function(city) {
 
-  var $xhr = $.getJSON(`https://api.foursquare.com/v2/venues/search?client_id=UKXBEBLHQL3OZCTIRTNXWLGZZH3UBCV1PRHMYMJ2UOOUWVS5&client_secret=XRAB0PTCW1RDQMAU5W1S3YMSXTZUFUUV01CYHTWQHR2T0LCM&v=20130815&near=${city}&categoryId=4bf58dd8d48988d1e0931735&radius=3200`);
+  var $xhr = $.getJSON(`https://api.foursquare.com/v2/venues/search?client_id=UKXBEBLHQL3OZCTIRTNXWLGZZH3UBCV1PRHMYMJ2UOOUWVS5&client_secret=XRAB0PTCW1RDQMAU5W1S3YMSXTZUFUUV01CYHTWQHR2T0LCM&v=20130815&near=${city}&categoryId=4bf58dd8d48988d1e0931735&categoryId=4bf58dd8d48988d16d941735&radius=3200`);
 
   $xhr.done(function(categoryId) {
     if ($xhr.status !== 200) {
@@ -105,6 +105,7 @@ var getCoffeeContent = function(venue) {
     }
     //grabs all data of each venue
     var biz = contents.response.venue;
+
     if (hasWifi(biz)) {
       var latitude = biz.location.lat;
       var longitude = biz.location.lng;
