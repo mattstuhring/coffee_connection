@@ -14,8 +14,8 @@ var styles = [{"featureType":"administrative","elementType":"all","stylers":[{"v
 
 function initMap() {
   var mapOptions = {
-    zoom: 7,
-    center: new google.maps.LatLng(47.4235, -120.3103),
+    zoom: 5,
+    center: new google.maps.LatLng(39.87642135, -97.29698872),
     styles: styles,
     zoomControl: true,
     zoomControlOptions: {
@@ -72,7 +72,7 @@ var getCoffeeId = function(city) {
 
 ///// FOR UNKNOWN REASONS FOURSQUARE API SEARCH BY CATEGORYID FOR COFFEE SHOPS HAS STOPPED WORKING AND NOW I AM SEARCHING BY QUERY=COFFEE,STARBUCKS
 
-  var $xhr = $.getJSON(`https://api.foursquare.com/v2/venues/search?client_id=UKXBEBLHQL3OZCTIRTNXWLGZZH3UBCV1PRHMYMJ2UOOUWVS5&client_secret=XRAB0PTCW1RDQMAU5W1S3YMSXTZUFUUV01CYHTWQHR2T0LCM&v=20130815&near=${city}&query=coffee,starbucks&radius=3200`);
+  var $xhr = $.getJSON(`https://api.foursquare.com/v2/venues/search?client_id=UKXBEBLHQL3OZCTIRTNXWLGZZH3UBCV1PRHMYMJ2UOOUWVS5&client_secret=XRAB0PTCW1RDQMAU5W1S3YMSXTZUFUUV01CYHTWQHR2T0LCM&v=20130815&near=${city}&categoryId= 4bf58dd8d48988d1e0931735&limit=50&radius=3200`);
 
   $xhr.done(function(categoryId) {
     if ($xhr.status !== 200) {
@@ -173,6 +173,11 @@ var hasWifi = function(biz) {
 
 //Start geolocation for desktop nav bar
 $('#myLocNav').on('click', function(event) {
+
+  coffeeShopContent = [];
+  allLatLng = [];
+  allMarkers = [];
+
   Materialize.toast('...Calculating', 4000);
 
   if (navigator.geolocation) {
@@ -202,6 +207,11 @@ $('#myLocNav').on('click', function(event) {
 
 //Start geolocation for side nav bar
 $('#myLocSideNav').on('click', function(event) {
+
+  coffeeShopContent = [];
+  allLatLng = [];
+  allMarkers = [];
+
   Materialize.toast('...Calculating', 4000);
 
   if (navigator.geolocation) {
@@ -234,7 +244,7 @@ var getCoffeeIdByUserLatLng = function(userLat, userLng) {
 
 ///// FOR UNKNOWN REASONS FOURSQUARE API SEARCH BY CATEGORYID FOR COFFEE SHOPS HAS STOPPED WORKING AND NOW I AM SEARCHING BY QUERY=COFFEE,STARBUCKS
 
-  var $xhr = $.getJSON(`https://api.foursquare.com/v2/venues/search?client_id=UKXBEBLHQL3OZCTIRTNXWLGZZH3UBCV1PRHMYMJ2UOOUWVS5&client_secret=XRAB0PTCW1RDQMAU5W1S3YMSXTZUFUUV01CYHTWQHR2T0LCM&v=20130815&ll=${userLat},${userLng}&query=coffee,starbucks&radius=3200`);
+  var $xhr = $.getJSON(`https://api.foursquare.com/v2/venues/search?client_id=UKXBEBLHQL3OZCTIRTNXWLGZZH3UBCV1PRHMYMJ2UOOUWVS5&client_secret=XRAB0PTCW1RDQMAU5W1S3YMSXTZUFUUV01CYHTWQHR2T0LCM&v=20130815&ll=${userLat},${userLng}&categoryId= 4bf58dd8d48988d1e0931735&radius=3200`);
 
   $xhr.done(function(categoryId) {
     if ($xhr.status !== 200) {
