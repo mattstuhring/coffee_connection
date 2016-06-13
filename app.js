@@ -1,5 +1,9 @@
 'use strict';
 
+$('.button-collapse').sideNav({
+    closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+  }
+);
 
 // Declare variables and create empyt arrays
 var coffeeShopId = [];
