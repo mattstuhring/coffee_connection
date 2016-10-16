@@ -1,8 +1,7 @@
 # Coffee Connection
-<div>
-  <img src="http://i.giphy.com/l3vRkUrlOINEbWzhS.gif" height="500">
-  <img src="http://i.giphy.com/3oI9JxiwUrVtCUrhgQ.gif" height="500">
-</div>
+
+<img src="http://i.giphy.com/l3vRkUrlOINEbWzhS.gif" height="500"><img src="http://i.giphy.com/3oI9JxiwUrVtCUrhgQ.gif" height="500">
+
 Coffee Connection is a mobile responsive web app that locates coffee shops that feature wifi by user GPS location or by a user city input.
 
 ## What problem does it solve?
