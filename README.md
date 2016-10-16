@@ -1,6 +1,8 @@
 # Coffee Connection
 
+<img src="http://i.giphy.com/l3vRkUrlOINEbWzhS.gif">
 
+<img src="http://i.giphy.com/3oI9JxiwUrVtCUrhgQ.gif">
 
 Coffee Connection is an app that locates coffee shops with wifi by GPS location or by a city input.
 
@@ -12,5 +14,3 @@ Foursquare's API was leveraged for coffee shop search results within a set radiu
 
 ## What technologies did it use?
 HTML, CSS, JQuery, JavaScript, Materialize, FourSquare API
-
-<div style="max-width: 500px;" id="_giphy_3oI9JxiwUrVtCUrhgQ"></div><script> _gif_artist = "likwidates"; _gif_artist_avatar = "https://media3.giphy.com/avatars/default3.gif"; var _giphy = _giphy || []; _giphy.push({id: "3oI9JxiwUrVtCUrhgQ",w: 268, h: 480, clickthrough_url: "http://giphy.com/gifs/3oI9JxiwUrVtCUrhgQ"});var g = document.createElement("script"); g.type = "text/javascript"; g.async = true;g.src = ("https:" == document.location.protocol ? "https://" : "http://") + "giphy.com/static/js/widgets/embed.js";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(g, s);</script>
