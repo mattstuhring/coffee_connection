@@ -1,10 +1,9 @@
 # Coffee Connection
-
-<img src="http://i.giphy.com/l3vRkUrlOINEbWzhS.gif">
-
-<img src="http://i.giphy.com/3oI9JxiwUrVtCUrhgQ.gif">
-
-Coffee Connection is an app that locates coffee shops with wifi by GPS location or by a city input.
+<div>
+  <img src="http://i.giphy.com/l3vRkUrlOINEbWzhS.gif">
+  <img src="http://i.giphy.com/3oI9JxiwUrVtCUrhgQ.gif">
+</div>
+Coffee Connection is a mobile responsive web app that locates coffee shops that feature wifi by user GPS location or by a user city input.
 
 ## What problem does it solve?
 When you are constantly on the go there is no better place to work then a good coffee shop.  Coffee connection brings quick search results of the closest coffee shops that provide wifi in your local area, or a city search that a user inputs.  
