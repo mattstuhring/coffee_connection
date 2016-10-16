@@ -17,8 +17,8 @@ var styles = [{"featureType":"administrative","elementType":"all","stylers":[{"v
 
 function initMap() {
     var mapOptions = {
-    zoom: 5,
-    center: new google.maps.LatLng(39.87642135, -97.29698872),
+    zoom: 7,
+    center: new google.maps.LatLng(47.608013, -122.335167),
     styles: styles,
     zoomControl: true,
     zoomControlOptions: {
@@ -120,7 +120,16 @@ var getCoffeeContent = function(venue) {
       var hours = biz.hours.status;
       var fourSquareVenueUrl = biz.canonicalUrl;
 
-      var contentString = `<div class="infowindow"><h3>${venueName}</h3><p> ${address1}</p><p>${address2}</p><p>${address3}</p><h6>${hours}</h6><a href="${fourSquareVenueUrl}">${venueName}</a></div>`;
+      var contentString = `<div class="infowindow row">
+        <div class="col s12">
+          <h4>${venueName}</h4>
+          <p>${address1}</p>
+          <p>${address2}</p>
+          <p>${address3}</p>
+          <h6>${hours}</h6>
+          <a href="${fourSquareVenueUrl}">Directions & Info</a>
+        </div>
+      </div>`;
 
       var myLatLng = new google.maps.LatLng(latitude, longitude);
 
@@ -131,7 +140,7 @@ var getCoffeeContent = function(venue) {
 
       // image for custom google map marker - blue coffee cup
       var image = {
-        url: 'icon.png',
+        url: 'marker.png',
         size: new google.maps.Size(80, 80)
       };
 
@@ -182,7 +191,7 @@ $('#myLocNav').on('click', function(event) {
   allLatLng = [];
   allMarkers = [];
 
-  Materialize.toast('...Calculating', 4000);
+  Materialize.toast('Locate coffee shops with wifi?  Yes please!', 4000);
 
   if (navigator.geolocation) {
 
@@ -215,7 +224,7 @@ $('#myLocSideNav').on('click', function(event) {
   allLatLng = [];
   allMarkers = [];
 
-  Materialize.toast('...Calculating', 4000);
+  Materialize.toast('Locate coffee shops with wifi?  Yes please!', 4000);
 
   if (navigator.geolocation) {
 

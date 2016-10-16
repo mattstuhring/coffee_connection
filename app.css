@@ -1,5 +1,5 @@
 html, body {
-  height: 89%;
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
@@ -29,6 +29,12 @@ img {
 nav .input-field input {
   padding-left: 0;
 }
+.infowindow h4 {
+  font-family: 'Pacifico', Helvetica, sans-serif;
+  margin-bottom: 5px;
+  color: saddlebrown;
+  border-radius: 3px;
+}
 .infowindow p {
   margin-top: 0;
   margin-bottom: 0;
@@ -37,11 +43,7 @@ nav .input-field input {
 .infowindow h6 {
   font-family: 400 'Open Sans', sans-serif;
 }
-.infowindow h3 {
-  font: 2rem;
-  font-family: 700 'Open Sans', sans-serif;
-  margin-bottom: 5px;
-}
+
 ul {
   background-image: url('coffeeSideNav.svg');
   background-repeat: no-repeat;
