@@ -1,7 +1,10 @@
 # Coffee Connection
 
-<img src="http://i.giphy.com/l3vRkUrlOINEbWzhS.gif" height="500">
-<img src="http://i.giphy.com/3oI9JxiwUrVtCUrhgQ.gif" height="500">
+### Desktop
+<img src="http://i.giphy.com/l3vRkUrlOINEbWzhS.gif" height="250">
+
+### Mobile responsive
+<img src="http://i.giphy.com/3oI9JxiwUrVtCUrhgQ.gif" height="250">
 
 Coffee Connection is a mobile responsive web app that locates coffee shops that feature wifi by user GPS location or by a user city input.
 
