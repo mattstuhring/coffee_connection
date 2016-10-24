@@ -31,8 +31,8 @@ nav .input-field input {
 }
 .infowindow h4 {
   font-family: 'Pacifico', Helvetica, sans-serif;
-  margin-bottom: 5px;
-  color: saddlebrown;
+  margin-bottom: 15px;
+  color: blue;
   border-radius: 3px;
 }
 .infowindow p {
